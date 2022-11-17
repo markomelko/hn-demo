@@ -1,5 +1,5 @@
 
 // Default configs.
 export const APP_DEFAULTS = {
-  PAGINATION: 5,
+  PAGINATION: 20,
 }

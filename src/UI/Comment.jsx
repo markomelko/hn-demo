@@ -26,7 +26,7 @@ export const Comment = ({ commentData }) => {
           {parse(commentData.text)}
         </div>
       </div>
-      <div className='hn-default-text '>
+      <div className='hn-default-text'>
         Comment by: {''}
         <span className='hn-special-text'>{commentData?.by}</span>
       </div>

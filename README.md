@@ -2,7 +2,11 @@ Small demo for project for a Hackernoon assignment.
 
 Created with Vite / React / Javascript
 
-### Originals
+### Public demo
+
+[http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/](http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/)
+
+### Project origins
 
 [https://news.ycombinator.com/](https://news.ycombinator.com/)
 
@@ -29,6 +33,8 @@ Get credentials from assingment emals or from author
 | ------------------- | ----------------------------------------- |
 | `VITE_STORIES_ROOT` | Root URL for top stories, returns 500 IDs |
 | `VITE_CONTENT_ROOT` | A single Story / Comment - content URL    |
+
+Create .env file to the project root, and set variables as .env.sample advices.
 
 ### Development on localhost
 
