@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;500&display=swap');
+
+$hn-bg: #161b22;
+$hn-bg-gray: #6e7681;
+$hn-bg-comment: #b1bac4;
+$hn-border-dark: #21262d;
+$hn-text-default: #000;
+$hn-button-default: rgb(125, 125, 125);
+$hn-specials: #f06292;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $hn-text-default;
+  word-break: break-all;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.hn-special-text {
+  color: $hn-specials;
+}
+
+.hn-app-container {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.hn-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.hn-content-mb {
+  margin-bottom: 20px;
+}
+
+.hn-content-mt {
+  margin-top: 20px;
+}
+
+.hn-default-padding {
+  padding: 10px;
+}
+
+.hn-default-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: 300;
+  color: $hn-text-default;
+}
+
+.hn-large-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  font-weight: 500;
+  color: $hn-text-default;
+}
+
+.hn-light-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: 100;
+  color: $hn-text-default;
+}
+
+.hn-small-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: 100;
+  color: rgb(124, 120, 120);
+}
+
+.hn-act-as-link:hover {
+  cursor: pointer;
+}
