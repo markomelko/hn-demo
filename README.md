@@ -41,7 +41,6 @@ Create .env file to the project root, and set variables as .env.sample advices.
 ```sh
 npm install
 npm run dev
-npm run build
 ```
 
 Localhost address: `http://127.0.0.1:5173/`
