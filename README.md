@@ -39,6 +39,7 @@ Create .env file to the project root, and set variables as .env.sample advices.
 ### Development on localhost
 
 ```sh
+npm install
 npm run dev
 npm run build
 ```
