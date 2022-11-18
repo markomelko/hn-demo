@@ -1,4 +1,4 @@
-Small demo for project for a Hackernoon assignment.
+Small demo project for a given Hackernoon assignment.
 
 Created with Vite / React / Javascript
 
