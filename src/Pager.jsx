@@ -1,71 +1,85 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ActionGetStoryItems } from './store/appActions';
+import { ActionGetAndSetStoriesData } from './store/appActions';
+
+import { getItemsFromArray } from './utils/dataHandlers';
 
 import { APP_DEFAULTS } from './config/defaults';
 
 /**
- * Return wanted items from all stories array,
- * get from right start and end index posiotion.
- *
- * @property {Array} dataArr
- * @property {number} startIndex
- * @property {number} endIndex
- *
- * @returns {Array}
- */
-const getStoryIds = (dataArr, startIndex, endIndex) => {
-  let retArr = [];
-  for (let i = startIndex; i < endIndex; i++) {
-    retArr.push(dataArr[i]);
-  }
-  return retArr;
-};
-
-/**
  * Pager component.
  *
- *  First render:
- *  - request default stories
+ * Show more button press: get additional stories
  *
- *  Show more button press:
- *  - get additional stories
- *
- * Required: {@link ActionGetStoryItems}
+ * Required: {@link ActionGetAndSetStoriesData}
  *
  * @returns {React.ReactElement}
  */
 export const Pager = () => {
   const { PAGINATION } = APP_DEFAULTS;
 
+  const [currCount, setStoryCount] = useState(PAGINATION);
+  const [showMoreButton, setShowMoreButton] = useState(true);
+
+  const { storyIds, loaderActive } = useSelector((state) => state);
+
   const dispatch = useDispatch();
 
-  const [currCount, setStoryCount] = useState(PAGINATION);
-  const { topStories, teasersCount } = useSelector((state) => state);
+  const handleShowMoreTeasers = () => {
+    const newShowStoriesCount = currCount + PAGINATION;
+    const countOfStories = storyIds.length;
 
-  useEffect(() => {
-    if (teasersCount < currCount) {
-      const initialStories = getStoryIds(topStories, 0, PAGINATION);
-      dispatch(ActionGetStoryItems(true, PAGINATION, initialStories));
+    if (currCount < countOfStories && newShowStoriesCount < countOfStories) {
+      const storyIdsArr = getItemsFromArray(
+        storyIds,
+        currCount,
+        newShowStoriesCount
+      );
+
+      dispatch(ActionGetAndSetStoriesData(storyIdsArr, false));
+
+      setStoryCount(newShowStoriesCount);
+
+      setShowMoreButton(true);
+    } else if (
+      currCount < countOfStories &&
+      newShowStoriesCount >= countOfStories
+    ) {
+      const storyIdsArr = getItemsFromArray(
+        storyIds,
+        currCount,
+        countOfStories
+      );
+
+      dispatch(ActionGetAndSetStoriesData(storyIdsArr, false));
+
+      setStoryCount(countOfStories);
+
+      setShowMoreButton(false);
+    } else {
+      setShowMoreButton(false);
     }
-  }, []);
-
-  const showMoreBtnPrs = () => {
-    const newTotalCount = currCount + PAGINATION;
-    const storiesToAdd = getStoryIds(topStories, currCount, newTotalCount);
-
-    setStoryCount(newTotalCount);
-
-    dispatch(ActionGetStoryItems(false, newTotalCount, storiesToAdd));
   };
 
   return (
-    <button
-      className='hn-default-btn'
-      onClick={showMoreBtnPrs}
-    >
-      show more
-    </button>
+    <>
+      {loaderActive ? (
+        <p>Loading teasers...</p>
+      ) : (
+        <>
+          {showMoreButton ? (
+            <button
+              className='hn-default-btn'
+              onClick={handleShowMoreTeasers}
+            >
+              show more
+            </button>
+          ) : (
+            <p>No more teaser items...</p>
+          )}
+        </>
+      )}
+    </>
   );
 };

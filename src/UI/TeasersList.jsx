@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { Teaser } from './UI/Teaser';
+import { Teaser } from './Teaser';
 
 /**
  * Get current teasers list from app state

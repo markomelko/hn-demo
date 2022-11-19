@@ -13,7 +13,7 @@ export const NavBar = () => {
       <Link to='/'>
         <EvilIcon />
       </Link>
-      <div className='hn-default-text'>Hackernoon demo app 16.11.2022</div>
+      <div className='hn-default-text'>Hackernoon demo app 20.11.2022</div>
     </div>
   );
 };

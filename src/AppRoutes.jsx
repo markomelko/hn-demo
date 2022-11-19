@@ -1,10 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { LandingView } from './UI/LandingView';
-import { GetStory } from './GetStoryContent';
+import { GetStory } from './GetStory';
+
+import { Landing } from './UI/Landing';
+import { NotFound } from './UI/NotFound';
 
 /**
- * App routes.
+ * App route paths.
  *
  * @returns {React.ReactElement}
  */
@@ -12,11 +14,15 @@ export const AppRoutes = () => (
   <Routes>
     <Route
       path='/'
-      element={<LandingView />}
+      element={<Landing />}
     />
     <Route
       path='/story'
       element={<GetStory />}
+    />
+    <Route
+      path='*'
+      element={<NotFound />}
     />
   </Routes>
 );

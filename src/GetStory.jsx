@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+
+import { ActionSetCurrStoryId } from './store/appActions';
+
 import { Comment } from './UI/Comment';
 import { Story } from './UI/Story';
 
@@ -30,6 +34,8 @@ const fetchData = async (url) => {
  * @returns {ReactElement}
  */
 export const GetStory = () => {
+  const dispatch = useDispatch();
+
   const { search } = useLocation();
 
   const id = new URLSearchParams(search).get('id');
@@ -41,11 +47,12 @@ export const GetStory = () => {
     fetchData(dataUrl)
       .then((data) => {
         setStoryData(data);
+        dispatch(ActionSetCurrStoryId(data.id));
       })
       .catch((err) => {
         console.warn('Failed to fetch Story:', err);
       });
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -60,14 +67,14 @@ export const GetStory = () => {
           ))}
         </div>
       ) : (
-        <div>Loading story...</div>
+        <p>Loading or failed to load story...</p>
       )}
     </>
   );
 };
 
 /**
- * DEMO: Show top level of comments.
+ * NOTE: Show top level of comments on demo app.
  * @property {number} commentId
  *
  * @returns {React.ReactElement}

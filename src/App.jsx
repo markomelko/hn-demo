@@ -1,37 +1,38 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { ActionGetStories } from './store/appActions';
+import { ActionGetTopStoryIds } from './store/appActions';
 
 import { AppRoutes } from './AppRoutes';
+
 import { NavBar } from './UI/NavBar';
 
 /**
- * Root component for data initialization.
- * Required: {@link ActionGetStories}
+ * ROOT component for data initialization.
+ * Required: {@link ActionGetTopStoryIds}
  *
  * @returns {React.ReactElement}
  */
 export const App = () => {
-  const { topStories, startFail } = useSelector((state) => state);
+  const { storyIds, initializationFailed } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(ActionGetStories());
+    dispatch(ActionGetTopStoryIds());
   }, []);
 
-  let appStoriesReady = false;
+  let readyToRender = false;
 
-  if (topStories.length > 0 && !startFail) {
-    appStoriesReady = true;
+  if (storyIds.length > 0 && !initializationFailed) {
+    readyToRender = true;
   }
 
   return (
     <div className='hn-app-container'>
       <NavBar />
       <div className='hn-content-container'>
-        {appStoriesReady ? <AppRoutes /> : <div>Loading stories...</div>}
-        {startFail ? <p>App start failed, contact to author!</p> : ''}
+        {readyToRender ? <AppRoutes /> : <div>Loading stories...</div>}
+        {initializationFailed ? <p>App initialization error.</p> : ''}
       </div>
     </div>
   );

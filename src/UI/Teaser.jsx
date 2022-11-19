@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
+import moment from 'moment';
+
 /**
  * UI Component for a single TeaserItem.
  *
@@ -17,11 +19,13 @@ export const Teaser = ({ data }) => {
     });
   };
 
+  const ddMmYyyy = moment(data?.time * 1000).format('DD.MM.YYYY');
+
   return (
     <div className='hn-teaser-card hn-content-mb hn-default-padding'>
       <div>
         <div
-          className='hn-large-text hn-act-as-link'
+          className='hn-large-text hn-act-as-link hn-text-underline'
           onClick={handleItemClick}
         >
           {data?.title}
@@ -38,6 +42,9 @@ export const Teaser = ({ data }) => {
       <div>
         <div className='hn-default-text'>
           By: <span className='hn-special-text'>{data?.by}</span>
+        </div>
+        <div className='hn-default-text hn-content-mt'>
+          Published: {ddMmYyyy}
         </div>
         <div className='hn-default-text'>Score: {data?.score}</div>
         <div className='hn-default-text'>Comments: {data?.descendants}</div>

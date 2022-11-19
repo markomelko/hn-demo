@@ -9,7 +9,7 @@ const contentUrl = import.meta.env.VITE_CONTENT_ROOT;
  * 
  * @returns {Array} of story IDs
  */
-export const fetchData = createAsyncThunk('fetchData', async () => {
+export const fetchTopStoryIds = createAsyncThunk('fetchTopStoryIds', async () => {
   const data = await fetch(topStoriesUrl).then((r) => r.json((d) => d));
   return data;
 });
@@ -53,3 +53,20 @@ export const fetchStories = createAsyncThunk(
   }
 );
 
+
+/**
+ * getItemsFromArray.
+ *
+ * @param {*} arr items array
+ * @param {*} start start index
+ * @param {*} end end index
+ *
+ * @returns {Array} wanted items
+ */
+export const getItemsFromArray = (arr, start, end) => {
+  let retArr = [];
+  for (let i = start; i < end; i++) {
+    if (arr[i] !== undefined) retArr.push(arr[i]);
+  }
+  return retArr;
+};

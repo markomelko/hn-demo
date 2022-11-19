@@ -8,7 +8,7 @@
 }
 
 .hn-icon {
-  fill: #f5f5f5;
+  fill: #000;
   transition: all 0.5s;
 }
 
@@ -50,10 +50,18 @@
 }
 
 .hn-comment-card {
-  background-color: #ebebeb;
+  background-color: #fff;
   border: 0.5px solid #e0e0e0;
   width: 640px;
   @media (max-width: 750px) {
     width: 375px;
   }
+}
+
+.hn-scroller-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }

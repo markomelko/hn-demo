@@ -3,9 +3,10 @@ import React from 'react';
 import parse from 'html-react-parser';
 
 /**
- * Single Comment view, just a fast demo.
+ * Single comment component.
  *
- * NOTE: Comments requires more work.
+ * NOTE: Commenting overally requires more thinking and dev.
+ * Since there are replies and replies to replies..
  *
  * @returns {React.ReactElement}
  */
