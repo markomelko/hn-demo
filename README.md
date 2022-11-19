@@ -1,15 +1,22 @@
-Small fast demo project for a given Hackernoon assignment - read stories.
+Small fast demo project for a given Hackernoon assignment.
 
-App created with Vite / React / Javascript.
+App is created with Vite / React / Javascript.
 
-### In the future.
+### the story
 
-(after v 20.11.2022) Perhaps the whole data architecture could be thought of differently. Along side e.g. user presses next story, not fethed stories
-can be stored to the state etc.
+Initially, I did the POC phase straigt via component level state management, with useEffect. First phase looked a bit complex / heavy on component level, it worked fine and the dev work took only about on hour.
 
-### Public demo
+After one night, I decided to implement application level state manager (Redux) to the app. With the Redux, app's basic functionalities are working clearly. But, maybe the whole data architecture could be thought of differently, but thats a whole other story.
+
+I started this with Javascript, because I thought that possible exceptions with Typescript might slow me down on the work. With @reduxjs/toolkit and Typescript I could have had to scratch my head for a while.
+
+Codebase misses clearly Eslint and Tests, but those would took evening or two.
+
+### Public demo URL
 
 [http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/](http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/)
+
+NOTE: Build files are manually copied to AWS S3, without HTTPS. That can be done easily with Github Workflow / Actions and using the required AWS account secrets.
 
 ### Project origins
 
@@ -52,23 +59,9 @@ npm run dev
 
 Localhost address: `http://127.0.0.1:5173/`
 
-### some notes
+There is a generic config, now only to to set 'pagination' count.
 
-- PRIME:
-
-  Clean CSS classes / colors. Add Scroller features.
-
-- TODO:
-
-  Eslint, tests for primary components,
-
-  Make this to additional dev branch (as they are not required)
-
-- LATER:
-
-  In the background, you should be able to request any new stories that are released during user is reading current ones and they should be downloaded without re-loading all content again. Maybe ID-based state indexing (keeping track / fetching new stories) would better than count based.
-
-  Help scrolling, e.g. when open story from teasers, make 'back' feature that returns browser to the correct spot and maybe prev ready story is highlighted some how.
+That can be found from /config/defaults.js.
 
 ### Author
 
