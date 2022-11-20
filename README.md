@@ -65,6 +65,11 @@ There is a generic config, now only to to set 'pagination' count.
 
 That can be found from /config/defaults.js.
 
+### Branches
+
+There is a `main` branch and a `features` branch.
+Features branch have more coming on features, like get all comments, also the replies.
+
 ### Author
 
 Marko M - marko.melko@live.com
