@@ -16,21 +16,21 @@ Codebase misses clearly Eslint and Tests, but those would took evening or two. G
 
 ### Public demo URL
 
-[http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/](http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/){:target="\_blank"}
+[http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/](http://hackernoon-demo.s3-website-eu-west-1.amazonaws.com/)
 
 NOTE: Build files are manually copied to AWS S3, without HTTPS. That can be done easily with Github Workflow / Actions and using the required AWS account secrets.
 
 ### Project origins
 
-[https://news.ycombinator.com/](https://news.ycombinator.com/){:target="\_blank"}
+[https://news.ycombinator.com/](https://news.ycombinator.com/)
 
 ### Dev docs
 
-[https://vitejs.dev/](https://vitejs.dev/){:target="\_blank"}
+[https://vitejs.dev/](https://vitejs.dev/)
 
-[https://reactjs.org/](https://reactjs.org/){:target="\_blank"}
+[https://reactjs.org/](https://reactjs.org/)
 
-[https://react-redux.js.org/api/hooks#recipe-useactions](https://react-redux.js.org/api/hooks#recipe-useactions){:target="\_blank"}
+[https://react-redux.js.org/api/hooks#recipe-useactions](https://react-redux.js.org/api/hooks#recipe-useactions)
 
 ### Requirements
 
