@@ -17,7 +17,7 @@ export const fetchTopStoryIds = createAsyncThunk('fetchTopStoryIds', async () =>
 /**
  * Fetch the needed stories by 'storyIdArr' id array.
  * 
- * TODO: return reject / handlings
+ * TODO: handle reject
  * 
  * @property {Array} storyIdArr
  * @returns {Array} of story objects

@@ -76,7 +76,7 @@ export const Pager = () => {
               show more
             </button>
           ) : (
-            <p>No more teaser items...</p>
+            ''
           )}
         </>
       )}

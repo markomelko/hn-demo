@@ -9,17 +9,14 @@ import { Scroller } from '../Scroller';
  */
 export const Story = ({ data }) => {
   useEffect(() => {
-    const element = document.getElementById('hn-story-card-top');
+    const element = document.getElementById('hn-app-nav-id');
     element.scrollIntoView();
   }, []);
 
   return (
     <>
       <Scroller id={data.id} />
-      <div
-        id='hn-story-card-top'
-        className='hn-teaser-card hn-content-mb hn-default-padding'
-      >
+      <div className='hn-teaser-card hn-content-mb hn-default-padding'>
         <div>
           <div className='hn-large-text'>{data?.title}</div>
           <div className='hn-default-padding hn-light-text'>

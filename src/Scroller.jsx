@@ -7,6 +7,19 @@ import { PointRightIcon } from './UI/Icons';
 import { PointLeftIcon } from './UI/Icons';
 
 /**
+ * Prev or Next story button pressed.
+ *
+ * @param {function} navigateHandler
+ * @param {string} storyId
+ */
+const navigateTo = (navigateHandler, storyId) => {
+  navigateHandler({
+    pathname: '/story',
+    search: `?id=${storyId}`,
+  });
+};
+
+/**
  * Should be used with Story view.
  *
  * Features:
@@ -31,25 +44,20 @@ export const Scroller = ({ id }) => {
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      const newId = storyIds[currentIndex - 1];
+      const storyId = storyIds[currentIndex - 1];
       setCurrIndex(currentIndex - 1);
-
-      navigate({
-        pathname: '/story',
-        search: `?id=${newId}`,
-      });
+      navigateTo(navigate, storyId);
     }
   };
 
   const handleNext = () => {
-    if (currentIndex < totalCount) {
-      const newId = storyIds[currentIndex + 1];
+    // NOTE: Array starts from 0
+    let realTotal = totalCount - 1;
 
+    if (currentIndex < realTotal) {
+      const storyId = storyIds[currentIndex + 1];
       setCurrIndex(currentIndex + 1);
-      navigate({
-        pathname: '/story',
-        search: `?id=${newId}`,
-      });
+      navigateTo(navigate, storyId);
     }
   };
 

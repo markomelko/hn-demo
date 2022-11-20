@@ -9,7 +9,10 @@ import { EvilIcon } from './Icons';
  */
 export const NavBar = () => {
   return (
-    <div className='hn-navbar-container hn-default-padding'>
+    <div
+      className='hn-navbar-container hn-default-padding'
+      id='hn-app-nav-id'
+    >
       <Link to='/'>
         <EvilIcon />
       </Link>

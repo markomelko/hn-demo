@@ -49,8 +49,8 @@ export const GetStory = () => {
         setStoryData(data);
         dispatch(ActionSetCurrStoryId(data.id));
       })
-      .catch((err) => {
-        console.warn('Failed to fetch Story:', err);
+      .catch((_err) => {
+        console.warn('fetchData err:', _err);
       });
   }, [id]);
 
@@ -67,7 +67,7 @@ export const GetStory = () => {
           ))}
         </div>
       ) : (
-        <p>Loading or failed to load story...</p>
+        <p>Loading story data...</p>
       )}
     </>
   );
@@ -89,8 +89,8 @@ const GetComment = ({ commentId }) => {
       .then((data) => {
         setComment(data);
       })
-      .catch((err) => {
-        console.warn('Failed to fetch Comment:', err);
+      .catch((_err) => {
+        console.warn('fetchData err:', _err);
       });
   }, []);
 

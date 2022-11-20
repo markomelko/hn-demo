@@ -1,6 +1,6 @@
 .hn-navbar-container {
   width: 100%;
-  background-color: #9e9e9e;
+  background-color: $default-component-bg;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -13,23 +13,18 @@
 }
 
 .hn-icon:hover {
-  fill: $hn-specials;
+  fill: $color-app-effect;
   transition: all 0.5s;
   transform: scale(1.2);
 }
 
 .hn-teaser-card {
-  background-color: #dcdcdc;
-  border: 1px solid #9e9e9e;
-  border-bottom: 1px solid rgb(107, 104, 104);
+  background-color: $secondary-component-bg;
+  border-bottom: 2px solid $color-black;
   width: 640px;
   @media (max-width: 750px) {
     width: 365px;
   }
-}
-
-.hn-teaser-card:hover {
-  border: 1px dotted #9e9e9e;
 }
 
 .hn-default-btn {
@@ -41,17 +36,17 @@
   align-items: center;
   margin-bottom: 20px;
   text-transform: uppercase;
-  color: $hn-text-default;
+  color: $color-black;
 }
 
 .hn-default-btn:hover {
-  color: $hn-specials;
+  color: $color-app-effect;
   cursor: pointer;
 }
 
 .hn-comment-card {
-  background-color: #fff;
-  border: 0.5px solid #e0e0e0;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-black;
   width: 640px;
   @media (max-width: 750px) {
     width: 365px;
@@ -63,5 +58,5 @@
   justify-content: space-between;
   margin-bottom: 20px;
   padding: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $color-light-gray;
 }
