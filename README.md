@@ -4,15 +4,11 @@ App is created with Vite / React / Javascript.
 
 ### the story
 
-Initially, I did the POC straigt with component level state management, with useEffect. First phase looked a bit complex / heavy on component level, it worked fine and the dev work took only few hours.
+Initially, I did the initial version straigt with component level state management, with useEffect. First phase looked a bit complex / heavy on component level, it worked fine and the dev work took only few hours. After one night sleep, I decided to implement application level state manager (Redux) to the app. Because the paging and scrolling features found be a bit diffucult to implement without generic app state manager.
 
-After one night sleep, I decided to implement application level state manager (Redux) to the app. Because the paging and scrolling features found be a bit diffucult to implement without generic app state manager.
+Redux was the most familiar for me. So, with the Redux, app's basic functionalities are working in a clean way. I created App with Javascript, because I thought that possible exceptions with TS might slow me down on the work. With @reduxjs/toolkit and Typescript I could have had to scratch my head for a while. During sunday I thought, I would like to have all comments also rendered, so spend few hours more.
 
-Redux was the most familiar for me. So, with the Redux, app's basic functionalities are working clearly. But, maybe the whole data architecture could be thought of differently, but thats a whole other story, and then it would require detailed UX designing / definitions before development.
-
-I created App with Javascript, because I thought that possible exceptions with TS might slow me down on the work. With @reduxjs/toolkit and Typescript I could have had to scratch my head for a while.
-
-Codebase misses clearly Eslint and Tests, but those would took evening or two. Going to implement those to the different branch to make this even better testing experience and since those are additionals.
+Codebase misses clearly Eslint and component level Tests, but those would took evening or two. Going to implement those to the different branch to make this even better dev experience and since those are additionals.
 
 ### Public demo URL
 
@@ -68,7 +64,8 @@ That can be found from /config/defaults.js.
 ### Branches
 
 There is a `main` branch and a `features` branch.
-Features branch have more coming on features, like get all comments, also the replies.
+
+Features branch have more coming on features.
 
 ### Author
 
