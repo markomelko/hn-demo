@@ -20,7 +20,7 @@ Codebase misses clearly Eslint and Tests, but those would took evening or two. G
 
 NOTE: Build files are manually copied to AWS S3, without HTTPS. That can be done easily with Github Workflow / Actions and using the required AWS account secrets.
 
-### Project origins
+### Hacker News
 
 [https://news.ycombinator.com/](https://news.ycombinator.com/)
 

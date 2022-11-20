@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { Teaser } from './Teaser';
+import { TeaserComp } from './TeaserComp';
 
 /**
  * Get current teasers list from app state
@@ -16,7 +16,7 @@ export const TeasersList = () => {
   return (
     <>
       {curTeasers?.map((item) => (
-        <Teaser
+        <TeaserComp
           key={item.id}
           data={item}
         />

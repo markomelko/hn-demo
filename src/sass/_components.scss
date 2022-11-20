@@ -44,13 +44,18 @@
   cursor: pointer;
 }
 
-.hn-comment-card {
+.hn-comment-card,
+.hn-child-comment {
   background-color: $color-white;
   border-bottom: 1px solid $color-black;
   width: 640px;
   @media (max-width: 750px) {
     width: 365px;
   }
+}
+
+.hn-child-comment {
+  background-color: $color-app-light-effect;
 }
 
 .hn-scroller-container {

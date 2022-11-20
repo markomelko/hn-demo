@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { GetStory } from './GetStory';
+import { Story } from './Story';
 
 import { Landing } from './UI/Landing';
 import { NotFound } from './UI/NotFound';
@@ -18,7 +18,7 @@ export const AppRoutes = () => (
     />
     <Route
       path='/story'
-      element={<GetStory />}
+      element={<Story />}
     />
     <Route
       path='*'

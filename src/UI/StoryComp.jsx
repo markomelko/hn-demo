@@ -7,7 +7,7 @@ import { Scroller } from '../Scroller';
  *
  * @returns {React.ReactElement}
  */
-export const Story = ({ data }) => {
+export const StoryComp = ({ data }) => {
   useEffect(() => {
     const element = document.getElementById('hn-app-nav-id');
     element.scrollIntoView();

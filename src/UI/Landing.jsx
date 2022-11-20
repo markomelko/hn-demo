@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { TeasersList } from './TeasersList';
-
 import { Pager } from '../Pager';
 
 /**

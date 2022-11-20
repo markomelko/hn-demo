@@ -9,7 +9,7 @@ import moment from 'moment';
  *
  * @returns {React.ReactElement}
  */
-export const Teaser = ({ data }) => {
+export const TeaserComp = ({ data }) => {
   const navigate = useNavigate();
 
   const handleItemClick = () => {
