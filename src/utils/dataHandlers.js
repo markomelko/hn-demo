@@ -70,3 +70,21 @@ export const getItemsFromArray = (arr, start, end) => {
   }
   return retArr;
 };
+
+/**
+ * Fetch single content data.
+ * @property {string} url
+ * @returns {Promise}
+ */
+export const fetchJsonByUrl = async (url) => {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((r) => r.json())
+      .then((d) => {
+        resolve(d);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};

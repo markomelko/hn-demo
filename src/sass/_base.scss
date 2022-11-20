@@ -7,6 +7,7 @@ $secondary-component-bg: #dcdcdc;
 $color-black: #000;
 $color-white: #fff;
 $color-app-effect: #f06292;
+$color-app-light-effect: #96efbf;
 
 $color-light-gray: rgb(188, 188, 188);
 
@@ -87,6 +88,10 @@ a:hover {
   font-size: 16px;
   font-weight: 100;
   color: $color-light-gray;
+}
+
+.hn-text-black {
+  color: $color-black;
 }
 
 // specials
