@@ -20,6 +20,9 @@ export const TeaserComp = ({ data }) => {
   };
 
   const ddMmYyyy = moment(data?.time * 1000).format('DD.MM.YYYY');
+  // https://stackoverflow.com/questions/30979178/how-do-i-work-around-mutability-in-moment-js
+  // console.log('typeof: moment(data?.time * 1000).format("DD.MM.YYYY")');
+  // console.log(typeof moment(data?.time * 1000).format('DD.MM.YYYY'));
 
   return (
     <div className='hn-teaser-card hn-content-mb hn-default-padding'>
