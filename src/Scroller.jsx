@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -37,10 +37,14 @@ export const Scroller = ({ id }) => {
 
   const { storyIds } = useSelector((state) => state);
   const currentIndex = storyIds.findIndex((s) => s === id);
-
   const [currIndex, setCurrIndex] = useState(currentIndex);
 
   const totalCount = storyIds.length;
+
+  useEffect(() => {
+    // lets re-check current index, e.g, if user press back-button
+    setCurrIndex(storyIds.findIndex((s) => s === id));
+  }, [id]);
 
   const handlePrev = () => {
     if (currentIndex > 0) {
