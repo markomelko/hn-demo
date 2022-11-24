@@ -88,3 +88,31 @@ export const fetchJsonByUrl = async (url) => {
       });
   });
 };
+
+/**
+ * Parse Hackernoon API given timestamp to valid DD.MM.YYYY.
+ * Hackernoon Timestamp isn't valid browser Date.now() timestamp.
+ * 
+ * NOTE: getUTCMonth() returns values from 0 - 11.
+ * So there is a need to add (+1) to get correct month value.
+ * 
+ * Using browsers's own Date prototypes.
+ * 
+ * @param {string} hNtimestamp hackernoon timestamp 
+ * 
+ * @returns {string} as wanted time value
+ */
+export const parseTimeStamp = (hNtimestamp) => {
+
+  if (!hNtimestamp) return '-';
+
+  const validTimeStamp = new Date(hNtimestamp * 1000);
+
+  const day = validTimeStamp.getUTCDate();
+  const month = validTimeStamp.getUTCMonth() + 1;
+  const year = validTimeStamp.getUTCFullYear();
+
+  const retDate = day.toString().concat('.', month, '.', year)
+
+  return retDate;
+}

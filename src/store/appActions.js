@@ -67,7 +67,7 @@ export function ActionGetTopStoryIds() {
 
 /**
  * Keep track of currently open story IDs
- * @param {*} id 
+ * @param {string} id 
  * @returns {function} dispatch
  */
 export function ActionSetCurrStoryId(id) {

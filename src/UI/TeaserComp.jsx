@@ -2,10 +2,12 @@ import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import moment from 'moment';
+import { parseTimeStamp } from '../utils/dataHandlers';
 
 /**
  * UI Component for a single TeaserItem.
+ *
+ * Required: {@link parseTimeStamp}
  *
  * @returns {React.ReactElement}
  */
@@ -19,10 +21,7 @@ export const TeaserComp = ({ data }) => {
     });
   };
 
-  const ddMmYyyy = moment(data?.time * 1000).format('DD.MM.YYYY');
-  // https://stackoverflow.com/questions/30979178/how-do-i-work-around-mutability-in-moment-js
-  // console.log('typeof: moment(data?.time * 1000).format("DD.MM.YYYY")');
-  // console.log(typeof moment(data?.time * 1000).format('DD.MM.YYYY'));
+  const ddMmYyyy = parseTimeStamp(data?.time);
 
   return (
     <div className='hn-teaser-card hn-content-mb hn-default-padding'>
