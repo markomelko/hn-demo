@@ -98,7 +98,7 @@ export const fetchJsonByUrl = async (url) => {
  * 
  * Using browsers's own Date prototypes.
  * 
- * @param {string} hNtimestamp hackernoon timestamp 
+ * @param {number} hNtimestamp hackernoon timestamp 
  * 
  * @returns {string} as wanted time value
  */
